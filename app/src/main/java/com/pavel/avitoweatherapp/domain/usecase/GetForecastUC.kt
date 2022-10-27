@@ -1,7 +1,9 @@
 package com.pavel.avitoweatherapp.domain.usecase
 
-import com.pavel.avitoweatherapp.domain.util.ApiHelper
+import com.pavel.avitoweatherapp.domain.model.Forecast
+import com.pavel.avitoweatherapp.domain.repositories.ApiRepository
+import retrofit2.Response
 
-class GetForecastUC(private val apiHelper: ApiHelper) {
-    suspend fun getForecast(lat:String, lon :String, apiKey :String) = apiHelper.getForecast(lat, lon, apiKey)
+class GetForecastUC(private val apiRepository: ApiRepository) {
+    suspend fun getForecast(lat:String, lon :String, apiKey :String):Response<Forecast> = apiRepository.getForecast(lat, lon, apiKey)
 }

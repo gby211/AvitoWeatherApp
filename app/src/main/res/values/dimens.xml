@@ -4,4 +4,9 @@
     <dimen name="doubleMargin">16dp</dimen>
     <dimen name="tripleMargin">24dp</dimen>
     <dimen name="qMargin">32dp</dimen>
+
+    <dimen name="smallTextSize">14sp</dimen>
+    <dimen name="mediumTextSize">16sp</dimen>
+    <dimen name="largeTextSize">22sp</dimen>
+    <dimen name="largeLargeTextSize">28sp</dimen>
 </resources>

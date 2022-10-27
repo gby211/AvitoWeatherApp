@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="280dp"
+        android:layout_margin="@dimen/margin"
+        android:backgroundTint="@color/bc_day"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin">
+
+
+            <ImageView
+                android:id="@+id/imageViewWeather"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/textWind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="@dimen/mediumTextSize"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewWind"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewWind"
+                app:layout_constraintTop_toTopOf="@+id/imageViewWind" />
+
+            <TextView
+                android:id="@+id/textTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="@dimen/mediumTextSize"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewWeather" />
+
+            <ImageView
+                android:id="@+id/imageViewWind"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textTime"
+                app:srcCompat="@drawable/windy_forecast_pressure_air_weather_icon_228440" />
+
+            <TextView
+                android:id="@+id/textTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="@dimen/largeTextSize"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewWeather"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewWeather"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageViewWeather" />
+
+            <ImageView
+                android:id="@+id/imageViewPressure"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewWind"
+                app:srcCompat="@drawable/hot_cloud_forecast_temperature_weather_icon_228444" />
+
+            <TextView
+                android:id="@+id/textPressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="@dimen/mediumTextSize"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewPressure"
+                app:layout_constraintStart_toStartOf="@+id/textWind"
+                app:layout_constraintTop_toTopOf="@+id/imageViewPressure" />
+
+            <ImageView
+                android:id="@+id/imageViewHumidity"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewPressure"
+                app:srcCompat="@drawable/cloud_forecast_rain_humidity_weather_icon_228446" />
+
+            <TextView
+                android:id="@+id/textHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="@dimen/mediumTextSize"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewHumidity"
+                app:layout_constraintStart_toStartOf="@+id/textPressure"
+                app:layout_constraintTop_toTopOf="@+id/imageViewHumidity" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
