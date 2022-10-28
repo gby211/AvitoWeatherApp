@@ -14,6 +14,7 @@ data class Forecast(
     @SerializedName("message")
     val message: Int
 )
+
 data class CityForecast(
     @SerializedName("coord")
     val coord: Coord,
@@ -32,6 +33,7 @@ data class CityForecast(
     @SerializedName("timezone")
     val timezone: Int
 )
+
 data class Coord(
     @SerializedName("lat")
     val lat: Double,
@@ -61,10 +63,12 @@ data class WeatherCondition(
     @SerializedName("wind")
     val wind: Wind
 )
+
 data class Clouds(
     @SerializedName("all")
     val all: Int
 )
+
 data class Main(
     @SerializedName("feels_like")
     val feelsLike: Double,
@@ -85,14 +89,17 @@ data class Main(
     @SerializedName("temp_min")
     val tempMin: Double
 )
+
 data class Rain(
     @SerializedName("3h")
     val h: Double
 )
+
 data class Sys(
     @SerializedName("pod")
     val pod: String
 )
+
 data class Weather(
     @SerializedName("description")
     val description: String,
@@ -103,6 +110,7 @@ data class Weather(
     @SerializedName("main")
     val main: String
 )
+
 data class Wind(
     @SerializedName("deg")
     val deg: Int,

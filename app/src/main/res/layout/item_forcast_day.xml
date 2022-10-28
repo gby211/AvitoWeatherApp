@@ -39,42 +39,41 @@
                 android:id="@+id/textTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin"
                 android:fontFamily="@font/roboto_medium"
-                android:textSize="@dimen/mediumTextSize"
                 android:text="TextView"
+                android:textSize="@dimen/largeTextSize"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewWeather" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageViewWind"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="@dimen/margin"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.25"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textTime"
+                app:layout_constraintTop_toBottomOf="@+id/textTemp"
                 app:srcCompat="@drawable/windy_forecast_pressure_air_weather_icon_228440" />
 
             <TextView
                 android:id="@+id/textTemp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
                 android:fontFamily="@font/roboto_medium"
+                android:text="TextView"
                 android:textSize="@dimen/largeTextSize"
                 app:layout_constraintBottom_toBottomOf="@+id/imageViewWeather"
                 app:layout_constraintEnd_toStartOf="@+id/imageViewWeather"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageViewWeather" />
+                app:layout_constraintTop_toBottomOf="@+id/textTime" />
 
             <ImageView
                 android:id="@+id/imageViewPressure"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="@dimen/margin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.25"
@@ -95,8 +94,8 @@
 
             <ImageView
                 android:id="@+id/imageViewHumidity"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="@dimen/margin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.25"

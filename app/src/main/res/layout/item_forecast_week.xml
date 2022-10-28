@@ -18,8 +18,8 @@
                 android:id="@+id/textMaxTemp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
                 android:fontFamily="@font/roboto_medium"
+                android:text="TextView"
                 android:textSize="@dimen/mediumTextSize"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -31,8 +31,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin"
-                android:text="Min temp"
                 android:fontFamily="@font/roboto_medium"
+                android:text="Min temp"
                 android:textSize="@dimen/mediumTextSize"
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -55,12 +55,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/doubleMargin"
-                android:text="TextView"
                 android:fontFamily="@font/roboto_medium"
+                android:text="TextView"
                 android:textSize="@dimen/mediumTextSize"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <TextView
@@ -69,8 +69,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin"
                 android:fontFamily="@font/roboto_medium"
-                android:textSize="@dimen/largeTextSize"
                 android:text="TextView"
+                android:textSize="@dimen/largeTextSize"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -80,8 +80,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/doubleMargin"
-                android:text="Max temp"
                 android:fontFamily="@font/roboto_medium"
+                android:text="Max temp"
                 android:textSize="@dimen/mediumTextSize"
                 app:layout_constraintEnd_toStartOf="@+id/textMaxTemp"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -92,11 +92,24 @@
                 android:id="@+id/textMinTemp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
                 android:fontFamily="@font/roboto_medium"
+                android:text="TextView"
                 android:textSize="@dimen/mediumTextSize"
                 app:layout_constraintStart_toStartOf="@+id/textMaxTemp"
                 app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Число -"
+                android:textSize="@dimen/mediumTextSize"
+                app:layout_constraintEnd_toStartOf="@+id/textTime"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textTime" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

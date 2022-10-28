@@ -8,7 +8,7 @@ data class City(
     @SerializedName("lat")
     val lat: Double,
     @SerializedName("local_names")
-    val localNames: List<String>,
+    val localNames: Locales,
     @SerializedName("lon")
     val lon: Double,
     @SerializedName("name")
@@ -17,6 +17,7 @@ data class City(
     val state: String
 )
 
-data class Cities(
-    val cities : List<City>
+data class Locales(
+    @SerializedName("ru")
+    val ruName: String
 )

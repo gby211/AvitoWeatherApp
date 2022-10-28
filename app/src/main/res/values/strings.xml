@@ -8,5 +8,7 @@
     <string name="previous">Previous</string>
     <string name="main_fragment_label">Main Fragment</string>
     <string name="settings_fragment_label">SettingsFragment</string>
-    <string name="city">Город</string>
+    <string name="city">Город (вводите на русском для подсказок)</string>
+    <string name="on_day">НА\n \nДЕНЬ</string>
+    <string name="on_week">НА\n \nНЕДЕЛЮ</string>
 </resources>

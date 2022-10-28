@@ -5,6 +5,7 @@
     <data>
         <variable name="profileViewModel" type="com.pavel.avitoweatherapp.presentation.settings.SettingsViewModel"/>
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -45,12 +46,34 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/doubleMargin"
             android:fontFamily="@font/roboto_medium"
-            android:text="Выберите город для"
-            android:textSize="@dimen/largeTextSize"
+            android:gravity="center"
+            android:text="Выберите город для отображения погоды"
 
+            android:textSize="@dimen/largeTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:text="Сохранить"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout_holiday_destination" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

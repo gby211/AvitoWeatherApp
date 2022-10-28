@@ -1,10 +1,9 @@
 package com.pavel.avitoweatherapp.presentation.utils.diffcallback
 
 import androidx.recyclerview.widget.DiffUtil
-import com.pavel.avitoweatherapp.domain.model.Forecast
 import com.pavel.avitoweatherapp.domain.model.WeatherCondition
 
-class ForecastCallBack: DiffUtil.ItemCallback<WeatherCondition>() {
+class ForecastCallBack : DiffUtil.ItemCallback<WeatherCondition>() {
     override fun areItemsTheSame(
         oldItem: WeatherCondition,
         newItem: WeatherCondition

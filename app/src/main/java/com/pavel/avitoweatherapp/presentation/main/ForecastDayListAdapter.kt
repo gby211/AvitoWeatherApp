@@ -1,7 +1,6 @@
 package com.pavel.avitoweatherapp.presentation.main
 
-import android.text.format.DateUtils
-import android.util.Log
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
@@ -11,10 +10,10 @@ import com.pavel.avitoweatherapp.databinding.ItemForcastDayBinding
 import com.pavel.avitoweatherapp.domain.model.WeatherCondition
 import com.pavel.avitoweatherapp.presentation.utils.diffcallback.ForecastCallBack
 
-class ForecastDayListAdapter:
+class ForecastDayListAdapter :
     ListAdapter<WeatherCondition, ForecastDayListAdapter.ForecastViewHolder>(ForecastCallBack()) {
 
-    inner class ForecastViewHolder(private val binding: ItemForcastDayBinding):
+    inner class ForecastViewHolder(private val binding: ItemForcastDayBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(receivedItem: WeatherCondition) {
             binding.apply {
@@ -22,13 +21,14 @@ class ForecastDayListAdapter:
 
 //                val date = LocalDateTime.parse(receivedItem.dt.toString(), DateTimeFormatter.ISO_DATE_TIME)
 //                date.atOffset(ZoneOffset.UTC).toInstant().toEpochMilli()
-                Log.d("GGS", DateUtils.getRelativeTimeSpanString(receivedItem.dt.toLong()).toString())
-                textTime.text = DateUtils.getRelativeTimeSpanString(receivedItem.dt.toLong())
+                val time = receivedItem.dtTxt.split(" ")[1].dropLast(3)
+                textTime.text = "${if (time[0] != '0') time[0] else ""}${time.drop(1)}"
+//                    DateUtils.getRelativeTimeSpanString(receivedItem.dt.toLong())
 //                textTime.text = receivedItem.dt.toString() //TODO
 
-                textWind.text = receivedItem.wind.speed.toString()
-                textPressure.text = receivedItem.main.pressure.toString()
-                textHumidity.text = receivedItem.main.humidity.toString()
+                textWind.text = "${receivedItem.wind.speed.toString()} м/с"
+                textPressure.text = "${receivedItem.main.pressure.toString()} мм рт. ст."
+                textHumidity.text = "${receivedItem.main.humidity.toString()} %"
                 Glide.with(itemView.context)
                     .load("http://openweathermap.org/img/wn/${receivedItem.weather[0].icon}@2x.png")
                     .fitCenter()

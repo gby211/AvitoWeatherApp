@@ -62,6 +62,6 @@
     <color name="md_theme_dark_outlineVariant">#43474E</color>
     <color name="md_theme_dark_scrim">#000000</color>
     <color name="avito_red">#FB2542</color>
-    <color name="bc_week">#32ECDCFF</color>
+    <color name="bc_week">#4DECDCFF</color>
     <color name="bc_day">#320060A8</color>
 </resources>

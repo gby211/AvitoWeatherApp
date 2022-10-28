@@ -1,27 +1,32 @@
 package com.pavel.avitoweatherapp.data.local.sharedpref
 
 import android.content.Context
-import android.content.SharedPreferences
-import com.pavel.avitoweatherapp.domain.model.Coordinates
+import android.preference.PreferenceManager
+import com.pavel.avitoweatherapp.domain.model.CoordinatesAndCity
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
 
 private const val KEY_LON = "lon"
 private const val KEY_LAT = "lat"
+private const val KEY_CITY_NAME = "city"
 
-//@Singleton
-//class SharedPrefUserStorage {
-//
-//     fun saveCoordinates(coordinates: Coordinates): Boolean {
-//        sharedPreferences.edit().putString(KEY_LON, coordinates.lon).apply()
-//        sharedPreferences.edit().putString(KEY_LAT, coordinates.lat).apply()
-//        return true
-//    }
-//
-//     fun getCoordinates(): Coordinates {
-//        val lon = sharedPreferences.getString(KEY_LON, "") ?: ""
-//        val lat = sharedPreferences.getString(KEY_LAT, "") ?: ""
-//        return Coordinates(lon = lon, lat = lat)
-//    }
-//}
+@Singleton
+class SharedPrefUserStorage @Inject constructor(@ApplicationContext context: Context) {
+    val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+
+
+    fun saveCoordinates(coordinates: CoordinatesAndCity): Boolean {
+        prefs.edit().putString(KEY_LON, coordinates.lon).apply()
+        prefs.edit().putString(KEY_LAT, coordinates.lat).apply()
+        prefs.edit().putString(KEY_CITY_NAME, coordinates.city).apply()
+        return true
+    }
+
+    fun getCoordinates(): CoordinatesAndCity {
+        val lon = prefs.getString(KEY_LON, "") ?: ""
+        val lat = prefs.getString(KEY_LAT, "") ?: ""
+        val city = prefs.getString(KEY_CITY_NAME, "") ?: ""
+        return CoordinatesAndCity(lon = lon, lat = lat, city = city)
+    }
+}

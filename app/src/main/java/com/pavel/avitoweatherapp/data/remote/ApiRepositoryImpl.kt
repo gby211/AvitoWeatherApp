@@ -1,7 +1,7 @@
 package com.pavel.avitoweatherapp.data.remote
 
 import android.util.Log
-import com.pavel.avitoweatherapp.domain.model.Coordinates
+import com.pavel.avitoweatherapp.domain.model.City
 import com.pavel.avitoweatherapp.domain.model.Forecast
 import com.pavel.avitoweatherapp.domain.repositories.ApiRepository
 import retrofit2.Response
@@ -18,7 +18,8 @@ class ApiRepositoryImpl @Inject constructor(private val weatherApi: WeatherApi) 
     override suspend fun getCoordinatesByCityName(
         cityName: String,
         apiKey: String
-    ): Response<Coordinates> {
+    ): /*Response<Cities>*///FIXME
+            Response<List<City>> {
         return weatherApi.getCoordinatesByCityName(cityName, apiKey = apiKey)
     }
 }

@@ -37,11 +37,11 @@ object OpenWeatherModule {
     @Singleton
     fun provideWeatherApi(retrofit: Retrofit): WeatherApi = retrofit.create(WeatherApi::class.java)
 
-    @Singleton
-    @Provides
-    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
-        return context.getSharedPreferences(SHA, Context.MODE_PRIVATE)
-    }
+//    @Singleton
+//    @Provides
+//    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
+//        return context.getSharedPreferences(SHA, Context.MODE_PRIVATE)
+//    }
 
 //    @Provides
 //    @Singleton
@@ -53,9 +53,19 @@ object OpenWeatherModule {
 //    fun provideSaveCoordinatesUC(dataRepository: DataRepository): SaveCoordinatesUC =
 //        SaveCoordinatesUC(dataRepository)
 
+    @Singleton
+    @Provides
+    fun provideSharedPreference(@ApplicationContext context: Context): SharedPreferences {
+        return context.getSharedPreferences(SHA, Context.MODE_PRIVATE)
+    }
+
     @Provides
     @Singleton
     fun provideApiRepository(apiRepository: ApiRepositoryImpl): ApiRepository = apiRepository
+
+//    @Provides
+//    @Singleton
+//    fun provideDataRepository(dataRepository: DataRepositoryImpl): DataRepository = dataRepository
 
     @Provides
     @Singleton
