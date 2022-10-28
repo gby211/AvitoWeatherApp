@@ -31,9 +31,10 @@
 - При выборе цветов для приложения воспользовался билдером Material 3 и использовал основные цвета логотипа avito
 - Все размеры вынесены в dimen файл
 - Все строки вынесены в strings файл
-- AutoCompleteTextView для автозаполения города по имени
+- AutoCompleteTextView для автозаполения города по названию города
 - 2 RecyclerView расположенных горизонтально
-- Сделанно так что бы приложение смотрелось нормально в тёмной теме и светлой
+- Настроено корректное отображение в тёмной теме и светлой
+- Автопределение местоположения
 
 #### Технологии которые не успел реализовать:
 - `Room` для сохранения в кеш
@@ -48,11 +49,11 @@
 - Отображение информации о погоде на неделю : `температура`, `дата`, `максимальная температура`, `минимальная температура`, `картинка погоды`
 - Перемещение на вкладку с настройками
 - Автозаполнение названия города с помощью "AutoCompleteTextView"
-- Сохранение города в SharedPreferences для прогноза в нём
+- Сохранение города в SharedPreferences
+- Определение местоположения
 
 #### Не реализованный функционал / что можно улучшить
-- [В своём предыдущем проекте](https://github.com/gby211/weather-app-on-compose) я использовал LocationManager для автоматического определния координат
-- Показ progress bar для отображения того что данные загружаються, и скрытие эллементов для красоты
+- Показ progress bar для отображения того что данные загружаются, и скрытие эллементов для красоты
 - Проработать интерфейс лучше для корректного отображения на всех экранах
 - Внесети Header в recyclerView для отображения текста "НА ДЕНЬ"
 - Доработать UseCase
@@ -67,6 +68,8 @@
 <img width="250" src="https://github.com/gby211/AvitoWeatherApp/blob/master/Screens/d2.jpg"> <img width="250" src="https://github.com/gby211/AvitoWeatherApp/blob/master/Screens/l2.jpg">
 \
 <img width="250" src="https://github.com/gby211/AvitoWeatherApp/blob/master/Screens/d3.jpg"> <img width="250" src="https://github.com/gby211/AvitoWeatherApp/blob/master/Screens/l3.jpg">
+\
+<img width="250" src="https://github.com/gby211/AvitoWeatherApp/blob/master/Screens/d4.jpg"> <img width="250" src="https://github.com/gby211/AvitoWeatherApp/blob/master/Screens/l4.jpg">
 
 
 
