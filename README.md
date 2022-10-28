@@ -61,6 +61,11 @@
 
 #### Презентация приложения
 
+<img width="250" src="https://github.com/gby211/AvitoWeatherApp/blob/master/Screens/d1.jpg"> <img width="250" src="https://github.com/gby211/AvitoWeatherApp/blob/master/Screens/l1.jpg">
+\
+<img width="250" src="https://github.com/gby211/AvitoWeatherApp/blob/master/Screens/d2.jpg"> <img width="250" src="https://github.com/gby211/AvitoWeatherApp/blob/master/Screens/l2.jpg">
+\
+<img width="250" src="https://github.com/gby211/AvitoWeatherApp/blob/master/Screens/d3.jpg"> <img width="250" src="https://github.com/gby211/AvitoWeatherApp/blob/master/Screens/l3.jpg">
 
 
 
