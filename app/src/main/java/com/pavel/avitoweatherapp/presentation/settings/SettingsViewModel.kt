@@ -7,10 +7,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.pavel.avitoweatherapp.core.BaseViewModel
+import com.pavel.avitoweatherapp.domain.location.LocationTracker
 import com.pavel.avitoweatherapp.domain.model.City
 import com.pavel.avitoweatherapp.domain.model.CoordinatesAndCity
 import com.pavel.avitoweatherapp.domain.usecase.GetCoordinatesByCityNameUC
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 private const val KEY_LON = "lon"
@@ -22,18 +24,25 @@ class SettingsViewModel @Inject constructor(
     private val getCoordinatesByCityNameUC: GetCoordinatesByCityNameUC,
 //    private val saveCoordinatesUC: SaveCoordinatesUC,
 //    private val getCoordinatesUC: GetCoordinatesUC,
-    private val sharedPreferences: SharedPreferences
+    private val sharedPreferences: SharedPreferences,
+    private val locationTracker: LocationTracker
 ) : BaseViewModel() {
 
 
     private val _coordinatesResponse = MutableLiveData<List<City>>(null)
     val coordinatesResponse: LiveData<List<City>> = _coordinatesResponse
 
+    private val _coordinatesByLoc = MutableLiveData<CoordinatesAndCity>(null)
+    val coordinatesByLoc: LiveData<CoordinatesAndCity> = _coordinatesByLoc
+
     private val _isError = MutableLiveData<Boolean>(null)
     val isError: LiveData<Boolean> = _isError
 
     private val _isSuccess = MutableLiveData<Boolean>(null)
     val isSuccess: LiveData<Boolean> = _isSuccess
+
+    private val _isNoGeo = MutableLiveData<Boolean>(null)
+    val isNoGeo: LiveData<Boolean> = _isNoGeo
 
     private val _cityName = MutableLiveData<String>(null)
     val cityName: LiveData<String> = _cityName
@@ -64,6 +73,35 @@ class SettingsViewModel @Inject constructor(
 //                _coordinatesResponse.value?.get(0)?.name ?: "Москва",
 //            )
         }
+    }
+
+    fun getCoordinatesByLocation() {
+        viewModelScope.launch {
+            locationTracker.getCurrentLocation()?.let { location ->
+                _coordinatesByLoc.value = CoordinatesAndCity(
+                    location.longitude.toString(),
+                    location.latitude.toString(),
+                    "${location.longitude.toString()}, ${location.latitude.toString()}"
+                )
+            }
+        }
+    }
+
+    fun saveCoordByLocIntoSha() {
+        sharedPreferences.edit()
+            .putString(KEY_LON, _coordinatesByLoc.value?.lon.toString()).apply()
+        sharedPreferences.edit()
+            .putString(KEY_LAT, _coordinatesByLoc.value?.lat.toString()).apply()
+        sharedPreferences.edit()
+            .putString(
+                KEY_CITY_NAME,
+                _coordinatesByLoc.value?.city
+            ).apply()
+        getCoordinates()
+    }
+
+    fun toastComplete() {
+        _isNoGeo.value = false
     }
 
     fun getCoordinates() {

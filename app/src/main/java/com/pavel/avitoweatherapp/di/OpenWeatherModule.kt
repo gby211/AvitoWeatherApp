@@ -1,7 +1,10 @@
 package com.pavel.avitoweatherapp.di
 
+import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.pavel.avitoweatherapp.data.remote.ApiRepositoryImpl
 import com.pavel.avitoweatherapp.data.remote.WeatherApi
 import com.pavel.avitoweatherapp.domain.repositories.ApiRepository
@@ -62,6 +65,13 @@ object OpenWeatherModule {
     @Provides
     @Singleton
     fun provideApiRepository(apiRepository: ApiRepositoryImpl): ApiRepository = apiRepository
+
+
+    @Provides
+    @Singleton
+    fun provideFusedLocationProviderClient(app: Application): FusedLocationProviderClient {
+        return LocationServices.getFusedLocationProviderClient(app)
+    }
 
 //    @Provides
 //    @Singleton

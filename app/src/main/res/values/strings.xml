@@ -11,4 +11,8 @@
     <string name="city">Город (вводите на русском для подсказок)</string>
     <string name="on_day">НА\n \nДЕНЬ</string>
     <string name="on_week">НА\n \nНЕДЕЛЮ</string>
+    <string name="label_settings">Выберите город для отображения погоды</string>
+    <string name="save">Сохранить</string>
+    <string name="date">Число </string>
+    <string name="use_current_coordinates">Использовать текущие координаты</string>
 </resources>

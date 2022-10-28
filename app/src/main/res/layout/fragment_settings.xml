@@ -44,12 +44,13 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin"
             android:layout_marginTop="@dimen/doubleMargin"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
-            android:text="Выберите город для отображения погоды"
+            android:text="@string/label_settings"
 
             android:textSize="@dimen/largeTextSize"
             app:layout_constraintEnd_toEndOf="parent"
@@ -60,8 +61,8 @@
             android:id="@+id/buttonSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="160dp"
-            android:text="Сохранить"
+            android:layout_marginTop="156dp"
+            android:text="@string/save"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/input_layout_holiday_destination" />
@@ -74,6 +75,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <Button
+            android:id="@+id/button_use_coord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qMargin"
+            android:text="@string/use_current_coordinates"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSave" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

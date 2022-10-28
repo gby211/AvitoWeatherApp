@@ -1,11 +1,14 @@
 package com.pavel.avitoweatherapp.presentation.settings
 
+import android.Manifest
 import android.os.Bundle
 import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -20,6 +23,7 @@ class SettingsFragment : Fragment() {
     private lateinit var cities: Array<String>
     private val viewModel by viewModels<SettingsViewModel>()
     private val binding get() = _binding!!
+    private lateinit var permissionLauncher: ActivityResultLauncher<Array<String>>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +35,21 @@ class SettingsFragment : Fragment() {
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
         return binding.root
 
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        permissionLauncher = registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()
+        ) {
+            viewModel.getCoordinatesByLocation()
+        }
+        permissionLauncher.launch(
+            arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+            )
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,6 +71,10 @@ class SettingsFragment : Fragment() {
         binding.buttonSave.setOnClickListener {
             viewModel.putCityName(binding.autoCompleteTextView.text.toString())
             viewModel.getCoordinatesByCityName()
+        }
+
+        binding.buttonUseCoord.setOnClickListener {
+            viewModel.saveCoordByLocIntoSha()
         }
     }
 
